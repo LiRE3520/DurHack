@@ -1,8 +1,33 @@
+
 {% extends "base.html" %}
 
 {% block content %}
 
-<h1> Explore Page</h1>
-<p> Below you can view cities on the map. Click on them to find out more </p>
+<head>
+<link rel = "stylesheet" href = "https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src = "https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
 
+<div class="bg-gray-100 min-h-screen py-8">
+    <div class="container mx-auto p-6">
+        <h1 class="text-4xl font-bold text-center mb-6 text-gray-800">Explore Amazing Cities</h1>
+        <p class="text-lg text-center text-gray-600 mb-10">Discover cities around the world. Click on a city to learn more about it!</p>
+
+       <div id="map" style= "height: 500px;"></div>
+       <script>
+            var map = L.map("map").setView([54.7753, 1.5849], 4);
+
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 20,
+                attribution: "© OpenStreetMap contributors"
+
+            }).addTo(map);
+
+       </script>
+
+
+    
+        </div>
+    </div>
+</div>
 {% endblock %}
