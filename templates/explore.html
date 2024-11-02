@@ -38,10 +38,12 @@
             
             var paris = L.marker([48.8575, 2.3514]).addTo(map);
                 berlin = L.marker([52.5200, 13.4050]).addTo(map);
+                london = L.marker([51.5072, -0.1276]).addTo(map);
 
             
-            paris.bindPopup("Paris").openPopup();
-            berlin.bindPopup("Berlin").openPopup();
+            paris.bindPopup("Paris")
+            berlin.bindPopup("Berlin")
+            london.bindPopup("London")
 
             var openrailwaymap = new L.TileLayer("http://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png",
             {
