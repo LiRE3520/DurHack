@@ -2,9 +2,64 @@
 
 {% block content %}
 
-<body>
-    <p>This is a test</p>
-</body>
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">Explore the World by Train</h1>
+            <p class="mt-4 text-lg">Experience the best train journeys with us.</p>
+            <a href="#" class="mt-6 inline-block bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold">Our Services</h2>
+            <p class="mt-2 text-gray-600">Providing seamless travel experiences</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold">Route Planning</h3>
+                    <p class="mt-2 text-gray-600">Find the best routes tailored to your travel needs.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold">Ticket Booking</h3>
+                    <p class="mt-2 text-gray-600">Book your tickets easily and securely online.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold">Real-time Tracking</h3>
+                    <p class="mt-2 text-gray-600">Stay updated with real-time train tracking and notifications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-gray-200 py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold">What Our Customers Say</h2>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic">“The best train experience I've ever had! Highly recommend.”</p>
+                    <p class="mt-4 font-semibold">– John Doe</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic">“Smooth booking process and great service on board.”</p>
+                    <p class="mt-4 font-semibold">– Jane Smith</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="italic">“I love the real-time tracking feature! It’s so helpful.”</p>
+                    <p class="mt-4 font-semibold">– Emily Johnson</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Hackstreet Boys. All rights reserved.</p>
+        </div>
+    </footer>
 
 {% endblock %}
 
