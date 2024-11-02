@@ -45,8 +45,9 @@
             berlin.bindPopup("Berlin")
             london.bindPopup("London")
         
-        
-            
+            paris.bindPopup('<a href="/paris">Paris</a>');
+            berlin.bindPopup('<a href="/berlin">Berlin</a>');
+            london.bindPopup('<a href="/london">London</a>');
 
             var openrailwaymap = new L.TileLayer("http://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png",
             {
@@ -72,14 +73,7 @@
             })
             .addTo(map);
 
-            function clearGallery() {
-        uploadedImages.length = 0; // Clear the array
-        localStorage.removeItem('uploadedImages'); // Clear Local Storage
-        displayImages(); // Refresh the gallery display
-    }
-
-    // Call clearGallery once to clear the gallery
-    clearGallery();
+        
 
        </script>
 

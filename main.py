@@ -28,3 +28,7 @@ def theTeam():
 @app.route('/gallery')
 def gallery():
     return render_template('gallery.html')
+
+@app.route('/paris')
+def paris():
+    return render_template('paris.html')
