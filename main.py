@@ -7,6 +7,11 @@ app = Flask(__name__)
 def hello():
     return render_template('index.html')
 
+
+@app.route('/routePlanner')
+def routePlanner():
+    return render_template('routePlanner.html')
+
 @app.route('/explore')
 def explore():
     return render_template('explore.html')
