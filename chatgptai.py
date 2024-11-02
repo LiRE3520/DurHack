@@ -6,7 +6,7 @@ client = Together(api_key="45433e26c5ee64c5e460981acf28b9d18b0f4df6060e14f35c299
 # Call the chat completion without the `_gl` parameter
 response = client.chat.completions.create(
     model="meta-llama/Llama-Vision-Free",
-    messages = [{"role": "user", "content": "Hello, how are you?"}],  # Add your messages here
+    messages = [{"role": "user", "content": "If I'm interrailing in Europe, what cities are good to visit if I like cheese? Put them in order I would visit, and in this format: city1, city2, city3,... -It is very essential you only list the cities in the brackets in my given format, and include no other text in your response."}],  # Add your messages here
     max_tokens=None,  # Use Python's `None` if you don't want to limit tokens
     temperature=0.7,
     top_p=0.7,
