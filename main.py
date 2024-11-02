@@ -10,3 +10,8 @@ def hello():
 @app.route('/home')
 def home():
     return render_template('home.html')
+
+
+@app.route('/routePlanner')
+def routePlanner():
+    return render_template('routePlanner.html')
