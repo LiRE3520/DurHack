@@ -24,3 +24,7 @@ def explore():
 @app.route('/team')
 def theTeam():
     return render_template('TheTeam.html')
+
+@app.route('/gallery')
+def gallery():
+    return render_template('gallery.html')
