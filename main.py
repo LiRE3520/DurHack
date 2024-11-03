@@ -51,6 +51,10 @@ def berlin():
 def london():
     return render_template('london.html')
 
+@app.route('/lisbon')
+def libson():
+    return render_template('lisbon.html')
+
 @app.route('/cityIdeas')
 def cityIdeas():
     
