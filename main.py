@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-
+from flask import Flask, request, render_template
+from chatgptai import getCities
 app = Flask(__name__)
 
 
@@ -20,7 +20,6 @@ def routePlanner():
 def explore():
     return render_template('explore.html')
 
-
 @app.route('/team')
 def theTeam():
     return render_template('TheTeam.html')
@@ -40,3 +39,13 @@ def berlin():
 @app.route('/london')
 def london():
     return render_template('london.html')
+
+@app.route('/cityIdeas')
+def cityIdeas():
+    # cityList = getCities
+    return render_template('cityIdeas.html')
+
+@app.route('/submitCity', methods=['POST'])
+def submit():
+    topic = request.form.get('topic')
+    return render_template('cityIdeas.html', topic=topic)
