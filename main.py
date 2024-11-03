@@ -5,7 +5,7 @@ from flask_socketio import SocketIO
 from flask import Flask, request, render_template
 from chatgptai import getCities
 app = Flask(__name__)
-socketio = SocketIO(app)  # Initialize with app
+socketio = SocketIO(app) 
 
 @app.route('/')
 def hello():
@@ -53,7 +53,7 @@ def london():
 
 @app.route('/cityIdeas')
 def cityIdeas():
-    # cityList = getCities
+    
     return render_template('cityIdeas.html')
 
 @app.route('/submitCity', methods=['POST'])
@@ -68,5 +68,5 @@ def submit():
     return render_template('cityIdeas.html', city1=city1, city2=city2, city3=city3, city4=city4, city5=city5)
 
 if __name__ == '__main__':
-    socketio.run(app)  # Use socketio.run to start the app
+    socketio.run(app)  
 
