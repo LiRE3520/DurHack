@@ -8,7 +8,7 @@
             Upload your photos from your travels to this shared gallery
         </p>
 
-        <!-- Image Upload Section -->
+   
         <div class="text-center">
             <input type="file" id="fileInput" multiple accept="image/*" class="mb-6 mx-auto">
             <div id="preview" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6"></div>
@@ -17,10 +17,10 @@
 </div>
 
 <script>
-    // Load stored images from localStorage or set to an empty array
+ 
     const uploadedImages = JSON.parse(localStorage.getItem('uploadedImages')) || [];
 
-    // Handle image file input change
+
     document.getElementById('fileInput').addEventListener('change', function(event) {
         const files = event.target.files;
 
@@ -29,7 +29,7 @@
             const reader = new FileReader();
 
             reader.onload = function(e) {
-                // Store the image in localStorage and display it
+                
                 uploadedImages.push(e.target.result);
                 localStorage.setItem('uploadedImages', JSON.stringify(uploadedImages));
                 displayImages();
@@ -39,7 +39,7 @@
         }
     });
 
-    // Display images from localStorage
+   
     function displayImages() {
         const preview = document.getElementById('preview');
         preview.innerHTML = ''; 
@@ -52,7 +52,7 @@
         });
     }
 
-    // Initial display of stored images
+
     displayImages();
 </script>
 {% endblock %}
