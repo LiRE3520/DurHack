@@ -1,8 +1,9 @@
 from together import Together
-
+from config import together_api_key
 def getCities(topic):
 # Initialize the client with your API key
-    client = Together(api_key="45433e26c5ee64c5e460981acf28b9d18b0f4df6060e14f35c29992bb7c9ddfd")
+    print(together_api_key)
+    client = Together(api_key=together_api_key)
 
 # Call the chat completion without the `_gl` parameter
     response = client.chat.completions.create(

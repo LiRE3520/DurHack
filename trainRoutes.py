@@ -2,9 +2,9 @@ import requests
 import json
 from requests.auth import HTTPBasicAuth
 import csv
+from config import RTT_API_USERNAME, RTT_API_KEY
 
-API_USERNAME = 'rttapi_tobyp'
-API_KEY = '241eeb90b4edcfe9be6bc3adf00e78b7f898f13d'
+
 BASE_URL = 'https://api.rtt.io/api/v1/json/search/'
 
 def to_crs(item, column_name='Description'):
@@ -26,7 +26,7 @@ def to_crs(item, column_name='Description'):
     return False
 
 def fetch_train_times(origin):
-    response = requests.get(f"https://api.rtt.io/api/v1/json/search/{origin}", auth=HTTPBasicAuth(API_USERNAME, API_KEY))
+    response = requests.get(f"https://api.rtt.io/api/v1/json/search/{origin}", auth=HTTPBasicAuth(RTT_API_USERNAME, RTT_API_KEY))
     if response.status_code == 200:
         data = response.json()
         print(f"printing data: {data}")
