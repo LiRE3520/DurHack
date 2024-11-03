@@ -73,6 +73,12 @@
             <input type="submit" value="Submit">
         </form>
     </div>
+
+    {% if city1 %}
+        <h2>I think you should go to: {{ city1 }}, {{ city2 }}, {{ city3 }}, {{ city4 }}, {{ city5 }}</h2>
+    {% endif %}
+
+
 </body>
 
 {% endblock %}

@@ -48,4 +48,10 @@ def cityIdeas():
 @app.route('/submitCity', methods=['POST'])
 def submit():
     topic = request.form.get('topic')
-    return render_template('cityIdeas.html', topic=topic)
+    cityArray = getCities(topic=topic)
+    city1 = cityArray[0]
+    city2 = cityArray[1]
+    city3 = cityArray[2]
+    city4 = cityArray[3]
+    city5 = cityArray[4]
+    return render_template('cityIdeas.html', city1=city1, city2=city2, city3=city3, city4=city4, city5=city5)
