@@ -3,31 +3,34 @@
 {% block content %}
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-    <h1>Route Planner</h1>
-    
-    <p>Need suggestions of where to go? Check out <a href="/cityIdeas">City Suggestions</a></p>
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-4">Route Planner</h1>
+        
+        <p class="mb-4">Need suggestions of where to go? Check out <a href="/cityIdeas" class="text-blue-500 underline">City Suggestions</a></p>
 
-    <form id="train-form">
-        <label for="station">Station Name:</label>
-        <input type="text" id="station" name="station" required>
-        <button type="submit">Get Train Times</button>
-    </form>
+        <form id="train-form" class="mb-4">
+            <label for="station" class="block text-lg font-medium mb-2">Station Name:</label>
+            <input type="text" id="station" name="station" required class="border border-gray-300 p-2 rounded w-full mb-4">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Get Train Times</button>
+        </form>
 
-    <h2>Train Times</h2>
-    <table id="train-table">
-        <thead>
-            <tr>
-                <th>Origin Station Name</th>
-                <th>Origin Time</th>
-                <th>Destination Station Name</th>
-                <th>Destination Time</th>
-            </tr>
-        </thead>
-        <tbody id="train-table-body">
+        <h2 class="text-2xl font-semibold mb-4">Train Times</h2>
+        <table id="train-table" class="min-w-full bg-white border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200 text-left">
+                    <th class="py-2 px-4 border-b">Origin Station Name</th>
+                    <th class="py-2 px-4 border-b">Origin Time</th>
+                    <th class="py-2 px-4 border-b">Destination Station Name</th>
+                    <th class="py-2 px-4 border-b">Destination Time</th>
+                </tr>
+            </thead>
+            <tbody id="train-table-body">
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
     <script>
         console.log("script running")
