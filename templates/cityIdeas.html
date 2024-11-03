@@ -59,6 +59,72 @@
         input[type="submit"]:hover {
             background-color: #3b5998;
         }
+        .city-recommendations {
+            margin-top: 20px;
+        }
+
+        .city-recommendations h2 {
+            color: #4e54c8;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .city-card {
+            background-color: #3b5998;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+            font-size: 18px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .city-card:hover {
+            transform: scale(1.05);
+            background-color: #4e54c8;
+        }
+
+        .city-flowchart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .city-flowchart h2 {
+            width: 100%;
+            color: #4e54c8;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .flow-node {
+            background-color: #4e54c8;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            min-width: 80px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .flow-node:hover {
+            transform: scale(1.1);
+            background-color: #3b5998;
+        }
+
+        .flow-connector {
+            font-size: 24px;
+            color: #4e54c8;
+        }
+
+
     </style>
 </head>
 <body>
@@ -72,11 +138,25 @@
             <input type="text" id="topic" name="topic" required pattern="^\S+$" title="Please enter a single word without spaces.">
             <input type="submit" value="Submit">
         </form>
+
+        <p><br></br>Want to back to <a href="/routePlanner">planning?</a></p>
     </div>
 
     {% if city1 %}
-        <h2>I think you should go to: {{ city1 }}, {{ city2 }}, {{ city3 }}, {{ city4 }}, {{ city5 }}</h2>
+    <div class="city-flowchart">
+        <h2>I think you would love</h2>
+        <div class="flow-node">{{ city1 }}</div>
+        <div class="flow-connector">→</div>
+        <div class="flow-node">{{ city2 }}</div>
+        <div class="flow-connector">→</div>
+        <div class="flow-node">{{ city3 }}</div>
+        <div class="flow-connector">→</div>
+        <div class="flow-node">{{ city4 }}</div>
+        <div class="flow-connector">→</div>
+        <div class="flow-node">{{ city5 }}</div>
+    </div>
     {% endif %}
+
 
 
 </body>
