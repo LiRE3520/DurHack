@@ -1,63 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <div class="bg-gray-100 min-h-screen py-8">
     <div class="container mx-auto p-6">
         <h1 class="text-4xl font-bold text-center mb-6 text-gray-800">Gallery</h1>
-        <p class="text-lg text-center text-gray-600 mb-10">Upload your photos from your travels to this shared gallery</p>
+        <p class="text-lg text-center text-gray-600 mb-10">
+            Upload your photos from your travels to this shared gallery
+        </p>
 
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Upload Gallery</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            text-align: center;
-        }
-        input[type="file"] {
-            display: block;
-            margin: 0 auto 20px auto;
-        }
-        #preview {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .image-container {
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-        .image-container:hover {
-            transform: scale(1.05);
-        }
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-    </style>
-</head>
-<body>
-
-<h1>Image Upload Gallery</h1>
-<input type="file" id="fileInput" multiple accept="image/*">
-<div id="preview"></div>
+        <!-- Image Upload Section -->
+        <div class="text-center">
+            <input type="file" id="fileInput" multiple accept="image/*" class="mb-6 mx-auto">
+            <div id="preview" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6"></div>
+        </div>
+    </div>
+</div>
 
 <script>
-    const uploadedImages = JSON.parse(localStorage.getItem('uploadedImages')) || []; 
+    // Load stored images from localStorage or set to an empty array
+    const uploadedImages = JSON.parse(localStorage.getItem('uploadedImages')) || [];
 
+    // Handle image file input change
     document.getElementById('fileInput').addEventListener('change', function(event) {
         const files = event.target.files;
 
@@ -66,34 +29,30 @@
             const reader = new FileReader();
 
             reader.onload = function(e) {
-                uploadedImages.push(e.target.result); 
-                localStorage.setItem('uploadedImages', JSON.stringify(uploadedImages)); 
-                displayImages(); 
+                // Store the image in localStorage and display it
+                uploadedImages.push(e.target.result);
+                localStorage.setItem('uploadedImages', JSON.stringify(uploadedImages));
+                displayImages();
             };
 
-            reader.readAsDataURL(file); 
+            reader.readAsDataURL(file);
         }
     });
 
+    // Display images from localStorage
     function displayImages() {
         const preview = document.getElementById('preview');
         preview.innerHTML = ''; 
 
         uploadedImages.forEach(imageSrc => {
             const imgContainer = document.createElement('div');
-            imgContainer.classList.add('image-container');
-            imgContainer.innerHTML = `<img src="${imageSrc}" alt="Uploaded Image">`;
+            imgContainer.classList.add('image-container', 'shadow-lg', 'rounded-md', 'overflow-hidden', 'transition-transform', 'transform', 'hover:scale-105');
+            imgContainer.innerHTML = `<img src="${imageSrc}" alt="Uploaded Image" class="w-full h-auto">`;
             preview.appendChild(imgContainer);
         });
     }
 
-
+    // Initial display of stored images
     displayImages();
 </script>
-
-</body>
-</html>
-
-        
-
 {% endblock %}
